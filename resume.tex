@@ -1,0 +1,167 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% Fix fancyhdr warning
+\setlength{\footskip}{4.08003pt}
+
+%----------FONT OPTIONS----------
+\usepackage[sfdefault]{FiraSans}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom{}
+\raggedright{}
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule{} \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{0pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Vansh Tyagi} \\ \vspace{5pt}
+    \small \href{mailto:vanshtyagi2005@gmail.com}{\underline{vanshtyagi2005@gmail.com}} $|$ 
+    \href{https://github.com/vanshtyagivt2005-sudo}{\underline{https://github.com/vanshtyagivt2005-sudo}} $|$ 
+    \href{https://www.linkedin.com/in/vansh-tyagi-9a3226321/}{\underline{https://www.linkedin.com/in/vansh-tyagi-9a3226321/}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart{}
+    \resumeSubheading
+      {National Institute of Technology Kurukshetra}{Kurukshetra, India}
+      {B.Tech in Electronics and Communication Engineering; CGPA: 9.100/10.0}{Aug 2024 -- Expected May 2028}
+  \resumeSubHeadingListEnd{}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Movie Recommendation System Using Collaborative Filtering \& SVD} $|$ \href{https://github.com/vanshtyagivt2005-sudo/movie-recommendation-system.git}{\underline{GitHub}}}{Dec 2025}
+          \resumeItemListStart
+            \resumeItem{Implemented a hybrid recommendation approach combining popularity-based filtering (for cold-start scenarios) and collaborative filtering using Singular Value Decomposition (SVD) for personalized predictions.}
+            \resumeItem{Applied dimensionality reduction techniques with TruncatedSVD to efficiently compute user-item similarity matrices and optimize recommendation accuracy}
+            \resumeItem{Addressed the cold-start problem by implementing fallback mechanisms for new users with no rating history, ensuring robust recommendations.}
+            \resumeItem{Evaluated model performance using RMSE metrics on 80/20 train-test split (19,355 test samples), achieving dimensionality reduction from 9,724 to 20 latent features while retaining 39.21\% variance.}
+
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Satellite Image Segmentation Using Unsupervised Machine Learning \& PCA} $|$ \href{https://github.com/vanshtyagivt2005-sudo/satellite-image-segmentation.git}{\underline{GitHub}}}{Feb 2026}
+          \resumeItemListStart
+            \resumeItem{Transformed 3D satellite image tensor (512$\times$512$\times$4) into 2D feature matrix (262,144$\times$4) representing each pixel as a multivariate data point with spectral signatures (Red, Green, Blue, NIR bands)}
+            \resumeItem{Applied Principal Component Analysis (PCA) for dimensionality reduction, compressing 4 correlated spectral bands into 2 principal components while retaining 95\% variance}
+            \resumeItem{Utilized DBSCAN (Density-Based Spatial Clustering) for anomaly detection and identifying arbitrarily-shaped geographic features in the reduced feature space, effectively segmenting the satellite image into distinct land cover classes without requiring labeled data}
+            \resumeItem{Evaluated segmentation quality using multiple metrics: Silhouette Score, Calinski-Harabasz Index, and Davies-Bouldin Index, achieving a Silhouette Score of 0.45, indicating well-defined clusters in the segmented image.}
+
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:} Python, C/C++, JavaScript, SQL \\
+     \textbf{Web Development:} HTML/CSS, React, Node.js, Flask, FastAPI \\
+     \textbf{Machine Learning:} scikit-learn, TensorFlow, PyTorch \\
+     \textbf{Data Science:} NumPy, pandas, Matplotlib, Seaborn, Jupyter \\
+     \textbf{Databases:} MySQL, PostgreSQL, MongoDB \\
+     \textbf{Tools \& Systems:} Git, Linux, VS Code
+    }}
+ \end{itemize}
+
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+ \resumeSubHeadingListStart
+    \resumeProjectHeading
+        {\textbf{JEE Main 2024} $|$ 99.36 Percentile}{Jan 2024}
+        \resumeItemListStart
+          \resumeItem{Secured 99.36 percentile among 1.2 million candidates in one of India's most competitive engineering entrance examinations.}
+        \resumeItemListEnd
+    \resumeProjectHeading
+        {\textbf{Smart India Hackathon} $|$ Participant}{2026}
+        \resumeItemListStart
+          \resumeItem{Participated in India's largest hackathon initiative, collaborating on innovative solutions for real-world problems.}
+        \resumeItemListEnd
+ \resumeSubHeadingListEnd
+
+\end{document}
