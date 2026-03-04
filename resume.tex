@@ -114,23 +114,33 @@
       \resumeProjectHeading
           {\textbf{Movie Recommendation System Using Collaborative Filtering \& SVD} $|$ \href{https://github.com/vanshtyagivt2005-sudo/movie-recommendation-system.git}{\underline{GitHub}}}{Dec 2025}
           \resumeItemListStart
-            \resumeItem{Implemented a hybrid recommendation approach combining popularity-based filtering (for cold-start scenarios) and collaborative filtering using Singular Value Decomposition (SVD) for personalized predictions.}
-            \resumeItem{Applied dimensionality reduction techniques with TruncatedSVD to efficiently compute user-item similarity matrices and optimize recommendation accuracy}
-            \resumeItem{Addressed the cold-start problem by implementing fallback mechanisms for new users with no rating history, ensuring robust recommendations.}
-            \resumeItem{Evaluated model performance using RMSE metrics on 80/20 train-test split (19,355 test samples), achieving dimensionality reduction from 9,724 to 20 latent features while retaining 39.21\% variance.}
-
+            \resumeItem{Built a user-item rating matrix from 100,836 ratings across 610 users and 9,724 movies, handling 98\%+ matrix sparsity by applying zero-fill imputation before factorization.}
+            \resumeItem{Implemented a hybrid recommendation approach combining popularity-based filtering (minimum 50 ratings threshold) for cold-start users and collaborative filtering using TruncatedSVD for personalized predictions.}
+            \resumeItem{Applied TruncatedSVD to decompose the sparse user-item matrix into 20 latent factors, then computed inter-movie correlation matrices to generate content-aware similarity recommendations.}
+            \resumeItem{Evaluated model on 80/20 train-test split (19,355 test samples), achieving RMSE of 3.00 and retaining 39.21\% variance; validated recommendations across genres (action, comedy, drama).}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
+    % \resumeSubHeadingListStart
+    %   \resumeProjectHeading
+    %       {\textbf{Satellite Image Segmentation Using Unsupervised Machine Learning \& PCA} $|$ \href{https://github.com/vanshtyagivt2005-sudo/satellite-image-segmentation.git}{\underline{GitHub}}}{Feb 2026}
+    %       \resumeItemListStart
+    %         \resumeItem{Transformed 3D satellite image tensor (512$\times$512$\times$4) into 2D feature matrix (262,144$\times$4) representing each pixel as a multivariate data point with spectral signatures (Red, Green, Blue, NIR bands)}
+    %         \resumeItem{Applied Principal Component Analysis (PCA) for dimensionality reduction, compressing 4 correlated spectral bands into 2 principal components while retaining 95\% variance}
+    %         \resumeItem{Utilized DBSCAN (Density-Based Spatial Clustering) for anomaly detection and identifying arbitrarily-shaped geographic features in the reduced feature space, effectively segmenting the satellite image into distinct land cover classes without requiring labeled data}
+    %         \resumeItem{Evaluated segmentation quality using multiple metrics: Silhouette Score, Calinski-Harabasz Index, and Davies-Bouldin Index, achieving a Silhouette Score of 0.45, indicating well-defined clusters in the segmented image.}
+
+    %       \resumeItemListEnd
+    % \resumeSubHeadingListEnd
+
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Satellite Image Segmentation Using Unsupervised Machine Learning \& PCA} $|$ \href{https://github.com/vanshtyagivt2005-sudo/satellite-image-segmentation.git}{\underline{GitHub}}}{Feb 2026}
+          {\textbf{Cancer Subtype Discovery via Genomic Clustering \& SVD} $|$ \href{https://github.com/vanshtyagivt2005-sudo/genomic-sequence-clustering.git}{\underline{GitHub}}}{Feb 2026}
           \resumeItemListStart
-            \resumeItem{Transformed 3D satellite image tensor (512$\times$512$\times$4) into 2D feature matrix (262,144$\times$4) representing each pixel as a multivariate data point with spectral signatures (Red, Green, Blue, NIR bands)}
-            \resumeItem{Applied Principal Component Analysis (PCA) for dimensionality reduction, compressing 4 correlated spectral bands into 2 principal components while retaining 95\% variance}
-            \resumeItem{Utilized DBSCAN (Density-Based Spatial Clustering) for anomaly detection and identifying arbitrarily-shaped geographic features in the reduced feature space, effectively segmenting the satellite image into distinct land cover classes without requiring labeled data}
-            \resumeItem{Evaluated segmentation quality using multiple metrics: Silhouette Score, Calinski-Harabasz Index, and Davies-Bouldin Index, achieving a Silhouette Score of 0.45, indicating well-defined clusters in the segmented image.}
-
+            \resumeItem{Processed the TCGA Pan-Cancer RNA-Seq dataset (801 patients $\times$ 20,531 genes, 5 cancer types) from UCI, applying StandardScaler normalization to zero-center each gene's expression profile across patients.}
+            \resumeItem{Applied TruncatedSVD for dimensionality reduction, compressing 20,531 gene features into 50 latent components (410$\times$ reduction) while retaining 63.6\% variance; analyzed scree plot to select optimal component count.}
+            \resumeItem{Computed 320,400 pairwise Euclidean distances in the reduced SVD space and performed agglomerative hierarchical clustering with Ward linkage; visualized truncated dendrograms to identify optimal cut height via largest merge-distance gap.}
+            \resumeItem{Evaluated clustering quality using Silhouette Score across k=2--10, achieving 0.2289 at k=5 (matching true cancer subtypes: BRCA, KIRC, COAD, LUAD, PRAD), with per-cluster silhouette analysis confirming cohesive groupings.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
