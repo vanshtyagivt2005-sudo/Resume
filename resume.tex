@@ -1,163 +1,129 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[10pt, a4paper]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=1.2cm, bottom=1.2cm, left=1.25cm, right=1.25cm]{geometry}
+\usepackage{fontspec}
+
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+
+% Set default/Latin font to Sans Serif in the main (rm) slot for a clean, modern look
+\babelfont{rm}{Noto Sans}
+% ---------------------------------
+
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
-
-% Fix fancyhdr warning
-\setlength{\footskip}{4.08003pt}
-
-%----------FONT OPTIONS----------
-\usepackage[sfdefault]{FiraSans}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\setlength{\footskip}{4.08003pt}
 
 \urlstyle{same}
-
 \raggedbottom{}
 \raggedright{}
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
+% Sections formatting (Added some breathing room)
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule{} \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+  \vspace{6pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule{} \vspace{6pt}]
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{0pt}}
+    {#1}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{4pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{3pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\circ$}
 
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, parsep=0pt, topsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{6pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=3pt, parsep=0pt, topsep=3pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{8pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Vansh Tyagi} \\ \vspace{5pt}
+    \textbf{\Huge \scshape Vansh Tyagi} \\ \vspace{4pt}
     \small \href{mailto:vanshtyagi.vt2005@gmail.com}{\underline{vanshtyagi.vt2005@gmail.com}} $|$ 
-    \href{https://github.com/vanshtyagivt2005-sudo}{\underline{https://github.com/vanshtyagivt2005-sudo}} $|$ 
-    \href{https://www.linkedin.com/in/vansh-tyagi-9a3226321/}{\underline{https://www.linkedin.com/in/vansh-tyagi-9a3226321/}}
+    \href{https://github.com/vanshtyagivt2005-sudo}{\underline{github.com/vanshtyagivt2005-sudo}} $|$ 
+    \href{https://www.linkedin.com/in/vansh-tyagi-9a3226321/}{\underline{linkedin.com/in/vansh-tyagi}}
 \end{center}
-
+\vspace{6pt}
 
 %-----------EDUCATION-----------
 \section{Education}
-  \resumeSubHeadingListStart{}
+  \resumeSubHeadingListStart
     \resumeSubheading
       {National Institute of Technology Kurukshetra}{Kurukshetra, India}
       {B.Tech in Electronics and Communication Engineering; CGPA: 9.100/10.0}{Aug 2024 -- Expected May 2028}
-  \resumeSubHeadingListEnd{}
+  \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
+
       \resumeProjectHeading
-          {\textbf{Movie Recommendation System Using Collaborative Filtering \& SVD} $|$ \href{https://github.com/vanshtyagivt2005-sudo/movie-recommendation-system.git}{\underline{GitHub}}}{Dec 2025}
-          \resumeItemListStart
-            \resumeItem{Built a user-item rating matrix from 100,836 ratings across 610 users and 9,724 movies, handling 98\%+ matrix sparsity by applying zero-fill imputation before factorization.}
-            \resumeItem{Implemented a hybrid recommendation approach combining popularity-based filtering (minimum 50 ratings threshold) for cold-start users and collaborative filtering using TruncatedSVD for personalized predictions.}
-            \resumeItem{Applied TruncatedSVD to decompose the sparse user-item matrix into 20 latent factors, then computed inter-movie correlation matrices to generate content-aware similarity recommendations.}
-            \resumeItem{Evaluated model on 80/20 train-test split (19,355 test samples), achieving RMSE of 3.00 and retaining 39.21\% variance; validated recommendations across genres (action, comedy, drama).}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+        {\textbf{Full-Stack Blog Platform (MegaBlog)} $|$ \href{https://github.com/vanshtyagivt2005-sudo/MegaBlog}{\underline{GitHub}}}{Jul 2026 -- Present}
+        \resumeItemListStart
+            \resumeItem{Developed a scalable, component-driven full-stack blogging platform using React, Vite, Tailwind CSS, and Appwrite.}
+            \resumeItem{Engineered secure user authentication and session management using Appwrite, seamlessly integrated with Redux Toolkit for global state synchronization.}
+            \resumeItem{Implemented protected routing via React Router and built highly reusable, validated UI components using React Hook Form.}
+            \resumeItem{Architected a modular codebase adhering strictly to separation of concerns for services, configuration, and UI.}
+            \resumeItem{Currently extending the platform with blog management features, content creation workflows, and backend integration.}
+        \resumeItemListEnd
 
-    % \resumeSubHeadingListStart
-    %   \resumeProjectHeading
-    %       {\textbf{Satellite Image Segmentation Using Unsupervised Machine Learning \& PCA} $|$ \href{https://github.com/vanshtyagivt2005-sudo/satellite-image-segmentation.git}{\underline{GitHub}}}{Feb 2026}
-    %       \resumeItemListStart
-    %         \resumeItem{Transformed 3D satellite image tensor (512$\times$512$\times$4) into 2D feature matrix (262,144$\times$4) representing each pixel as a multivariate data point with spectral signatures (Red, Green, Blue, NIR bands)}
-    %         \resumeItem{Applied Principal Component Analysis (PCA) for dimensionality reduction, compressing 4 correlated spectral bands into 2 principal components while retaining 95\% variance}
-    %         \resumeItem{Utilized DBSCAN (Density-Based Spatial Clustering) for anomaly detection and identifying arbitrarily-shaped geographic features in the reduced feature space, effectively segmenting the satellite image into distinct land cover classes without requiring labeled data}
-    %         \resumeItem{Evaluated segmentation quality using multiple metrics: Silhouette Score, Calinski-Harabasz Index, and Davies-Bouldin Index, achieving a Silhouette Score of 0.45, indicating well-defined clusters in the segmented image.}
-
-    %       \resumeItemListEnd
-    % \resumeSubHeadingListEnd
-
-    \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Cancer Subtype Discovery via Genomic Clustering \& SVD} $|$ \href{https://github.com/vanshtyagivt2005-sudo/genomic-sequence-clustering.git}{\underline{GitHub}}}{Feb 2026}
-          \resumeItemListStart
-            \resumeItem{Processed the TCGA Pan-Cancer RNA-Seq dataset (801 patients $\times$ 20,531 genes, 5 cancer types) from UCI, applying StandardScaler normalization to zero-center each gene's expression profile across patients.}
-            \resumeItem{Applied TruncatedSVD for dimensionality reduction, compressing 20,531 gene features into 50 latent components (410$\times$ reduction) while retaining 63.6\% variance; analyzed scree plot to select optimal component count.}
-            \resumeItem{Computed 320,400 pairwise Euclidean distances in the reduced SVD space and performed agglomerative hierarchical clustering with Ward linkage; visualized truncated dendrograms to identify optimal cut height via largest merge-distance gap.}
-            \resumeItem{Evaluated clustering quality using Silhouette Score across k=2--10, achieving 0.2289 at k=5 (matching true cancer subtypes: BRCA, KIRC, COAD, LUAD, PRAD), with per-cluster silhouette analysis confirming cohesive groupings.}
-          \resumeItemListEnd
+        {\textbf{Smart Delivery Route Optimizer} $|$ \href{https://github.com/vanshtyagivt2005-sudo/route_optimizer}{\underline{GitHub}}}{June 2026}
+        \resumeItemListStart
+            \resumeItem{Engineered a dynamic routing simulation in Python, bridging Machine Learning predictions with fundamental Graph algorithms.}
+            \resumeItem{Developed a K-Nearest Neighbors (KNN) regressor to predict real-time traffic multipliers based on variables like time and weather severity.}
+            \resumeItem{Implemented Dijkstra's Algorithm utilizing a Min-Heap (Priority Queue) to dynamically compute the absolute shortest path on a weighted adjacency list.}
+        \resumeItemListEnd
+      
     \resumeSubHeadingListEnd
-
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
+ \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=4pt]
     \small{\item{
-     \textbf{Languages:} Python, C/C++, JavaScript, SQL \\
-     \textbf{Web Development:} HTML/CSS, React, Node.js, Flask, FastAPI \\
-     \textbf{Machine Learning:} scikit-learn, TensorFlow, PyTorch \\
+     \textbf{Languages:} C/C++, Python, JavaScript, SQL \\
+     \textbf{Web Development:} HTML5, CSS3, Tailwind CSS, React, React Router, Redux Toolkit, React Hook Form, Node.js \\
+     \textbf{Machine Learning:} scikit-learn \\
      \textbf{Data Science:} NumPy, pandas, Matplotlib, Seaborn, Jupyter \\
-     \textbf{Databases:} MySQL, PostgreSQL, MongoDB \\
-     \textbf{Tools \& Systems:} Git, Linux, VS Code
+     \textbf{Databases:} MySQL, Appwrite \\
+     \textbf{Tools \& Systems:} Git, Linux, VS Code, Vite
     }}
  \end{itemize}
-
+ \vspace{4pt}
 
 %-----------ACHIEVEMENTS-----------
 \section{Achievements}
@@ -165,12 +131,13 @@
     \resumeProjectHeading
         {\textbf{JEE Main 2024} $|$ 99.36 Percentile}{Jan 2024}
         \resumeItemListStart
-          \resumeItem{Secured 99.36 percentile among 1.2 million candidates in one of India's most competitive engineering entrance examinations.}
+          \resumeItem{Secured the 99.36 percentile among 1.2 million candidates in one of India's most competitive engineering entrance examinations.}
         \resumeItemListEnd
+        
     \resumeProjectHeading
         {\textbf{Smart India Hackathon} $|$ Participant}{2026}
         \resumeItemListStart
-          \resumeItem{Participated in India's largest hackathon initiative, collaborating on innovative solutions for real-world problems.}
+          \resumeItem{Participated in India's largest hackathon initiative, collaborating on innovative tech solutions for real-world problems.}
         \resumeItemListEnd
  \resumeSubHeadingListEnd
 
